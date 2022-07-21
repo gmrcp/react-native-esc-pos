@@ -1,4 +1,4 @@
-package leesiongchan.reactnativeescpos;
+package gmrcp.reactnativeescpos;
 
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;

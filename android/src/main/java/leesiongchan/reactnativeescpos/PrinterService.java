@@ -1,4 +1,4 @@
-package leesiongchan.reactnativeescpos;
+package gmrcp.reactnativeescpos;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -24,9 +24,9 @@ import java.lang.Math;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import leesiongchan.reactnativeescpos.command.PrinterCommand;
-import leesiongchan.reactnativeescpos.helpers.EscPosHelper;
-import leesiongchan.reactnativeescpos.utils.BitMatrixUtils;
+import gmrcp.reactnativeescpos.command.PrinterCommand;
+import gmrcp.reactnativeescpos.helpers.EscPosHelper;
+import gmrcp.reactnativeescpos.utils.BitMatrixUtils;
 import static io.github.escposjava.print.Commands.*;
 
 public class PrinterService {

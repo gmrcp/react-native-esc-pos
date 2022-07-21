@@ -1,4 +1,4 @@
-package leesiongchan.reactnativeescpos;
+package gmrcp.reactnativeescpos;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -28,8 +28,8 @@ import io.github.escposjava.print.NetworkPrinter;
 import io.github.escposjava.print.Printer;
 import io.github.escposjava.print.exceptions.BarcodeSizeError;
 import io.github.escposjava.print.exceptions.QRCodeException;
-import leesiongchan.reactnativeescpos.helpers.EscPosHelper;
-import leesiongchan.reactnativeescpos.helpers.PrinterNotFoundException;
+import gmrcp.reactnativeescpos.helpers.EscPosHelper;
+import gmrcp.reactnativeescpos.helpers.PrinterNotFoundException;
 import android.util.Log;
 
 public class EscPosModule extends ReactContextBaseJavaModule {

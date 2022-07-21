@@ -1,4 +1,4 @@
-package leesiongchan.reactnativeescpos.command;
+package gmrcp.reactnativeescpos.command;
 
 import java.io.UnsupportedEncodingException;
 

@@ -1,4 +1,4 @@
-package leesiongchan.reactnativeescpos;
+package gmrcp.reactnativeescpos;
 
 import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;

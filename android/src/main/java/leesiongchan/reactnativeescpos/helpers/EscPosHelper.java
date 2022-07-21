@@ -1,4 +1,4 @@
-package leesiongchan.reactnativeescpos.helpers;
+package gmrcp.reactnativeescpos.helpers;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
