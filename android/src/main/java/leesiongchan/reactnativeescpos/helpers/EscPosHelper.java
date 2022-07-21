@@ -49,10 +49,10 @@ public class EscPosHelper {
     public static Bitmap resizeImage(Bitmap image, int width) {
         int origHeight = image.getHeight();
         int origWidth = image.getWidth();
-        int destHeight = (int) (origHeight / ratio);
         final int destWidth = width;
-
         float ratio = (float) origWidth / destWidth;
+        int destHeight = (int) (origHeight / ratio);
+
         // we create an scaled bitmap so it reduces the image, not just trim it
         Bitmap newImage = Bitmap.createScaledBitmap(image, destWidth, destHeight, false);
 
