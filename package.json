@@ -4,22 +4,14 @@
   "version": "0.9.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leesiongchan/react-native-escpos.git",
-    "baseUrl": "https://github.com/leesiongchan/react-native-escpos"
+    "url": "git+https://github.com/gmrcp/react-native-esc-pos.git",
+    "baseUrl": "https://github.com/gmrcp/react-native-esc-pos"
   },
   "license": "MIT",
   "author": {
-    "name": "Lee Siong Chan",
-    "email": "ahlee2326@me.com"
+    "name": "gmrcp",
+    "email": "goncalo@kitch.io"
   },
-  "keywords": [
-    "bluetooth",
-    "esc/pos",
-    "network",
-    "printer",
-    "react-native",
-    "thermal printer"
-  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -31,5 +23,8 @@
   "peerDependencies": {
     "react": "^16.5.0",
     "react-native": ">=0.57.0-rc.0 <1.0.x"
+  },
+  "publishConfig": {
+    "@gmrcp:registry": "https://npm.pkg.github.com"
   }
 }
