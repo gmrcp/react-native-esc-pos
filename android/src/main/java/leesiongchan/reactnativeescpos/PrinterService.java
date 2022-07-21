@@ -30,6 +30,7 @@ import leesiongchan.reactnativeescpos.utils.BitMatrixUtils;
 import static io.github.escposjava.print.Commands.*;
 
 public class PrinterService {
+    public Object timerId = null;
     public static final int PRINTING_WIDTH_58_MM = 384;
     public static final int PRINTING_WIDTH_76_MM = 450;
     public static final int PRINTING_WIDTH_80_MM = 576;
@@ -139,7 +140,7 @@ public class PrinterService {
     }
 
     public void printImage(Bitmap image) throws IOException {
-        image = EscPosHelper.resizeImage(image, printingWidth - DEFAULT_IMG_WIDTH_OFFSET, DEFAULT_IMG_MAX_HEIGHT);
+        // image = EscPosHelper.resizeImage(image, printingWidth - DEFAULT_IMG_WIDTH_OFFSET, DEFAULT_IMG_MAX_HEIGHT);
         ByteArrayOutputStream baos = generateImageByteArrayOutputStream(image);
         write(baos.toByteArray());
     }

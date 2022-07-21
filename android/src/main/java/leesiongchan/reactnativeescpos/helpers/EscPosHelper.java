@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ImageDecoder;
 import android.graphics.Paint;
+import android.os.Handler;
 
 import java.io.ByteArrayOutputStream;
 
@@ -49,18 +50,12 @@ public class EscPosHelper {
         int origWidth = image.getWidth();
         int origHeight = image.getHeight();
 
+        float ratio = (float) origWidth / destWidth;
+        int destHeight = (int) (origHeight / ratio);
+        // we create an scaled bitmap so it reduces the image, not just trim it
+        Bitmap newImage = Bitmap.createScaledBitmap(image, destWidth, destHeight, false);
+
         final int destWidth = width;
-
-        if (origWidth > destWidth) {
-            // picture is wider than we want it, we calculate its target height
-            int destHeight = origHeight / (origWidth / destWidth);
-            // we create an scaled bitmap so it reduces the image, not just trim it
-            Bitmap newImage = Bitmap.createScaledBitmap(image, destWidth, destHeight, false);
-
-            return newImage;
-        }
-
-        return image;
     }
 
     public static Bitmap resizeImage(Bitmap image, int maxWidth, int maxHeight) {
@@ -102,5 +97,38 @@ public class EscPosHelper {
         luminance = (int) (0.299 * r + 0.587 * g + 0.114 * b);
 
         return luminance < threshold;
+    }
+    
+
+    public static Object setTimeout(Runnable runnable, long delay) {
+        TimeoutEvent te =  new TimeoutEvent(runnable, delay);
+        return te;
+    }
+
+    public static void clearTimeout(Object timeoutEvent) {
+        if (timeoutEvent != null && timeoutEvent instanceof TimeoutEvent) {
+            ((TimeoutEvent) timeoutEvent).cancelTimeout();
+        }
+    }
+
+    private static class TimeoutEvent {
+        private static Handler handler = new Handler();
+        private volatile Runnable runnable;
+
+        private TimeoutEvent(Runnable task, long delay) {
+            runnable = task;
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    if (runnable != null) {
+                        runnable.run();
+                    }
+                }
+            }, delay);
+        }
+
+        private void cancelTimeout() {
+            runnable = null;
+        }
     }
 }
