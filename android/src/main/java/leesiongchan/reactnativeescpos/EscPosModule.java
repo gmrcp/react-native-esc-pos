@@ -111,7 +111,7 @@ public class EscPosModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void cutPart(String address, Promise promise) {
         try {
-             PrinterService printerService = printerServices.get(address);
+            PrinterService printerService = printerServices.get(address);
             printerService.cutPart();
             promise.resolve(true);
         } catch (Throwable e) {
@@ -122,7 +122,7 @@ public class EscPosModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void cutFull(String address, Promise promise) {
         try {
-             PrinterService printerService = printerServices.get(address);
+            PrinterService printerService = printerServices.get(address);
             printerService.cutFull();
             promise.resolve(true);
         } catch (Throwable e) {
@@ -175,16 +175,6 @@ public class EscPosModule extends ReactContextBaseJavaModule {
             promise.resolve(true);
         } catch (BarcodeSizeError e) {
             promise.reject(e);
-        }
-    }
-
-    @ReactMethod
-    public void printBarcode(String str, int nType, int nWidthX, int nHeight, int nHriFontType, int nHriFontPosition, Promise promise) {
-        try {
-            printerService.printBarcode(str,nType,nWidthX,nHeight,nHriFontType,nHriFontPosition);
-            promise.resolve(true);
-        } catch (Exception e) {
-            promise.reject(e);
         } catch (Throwable e) {
             promise.reject(e);
         }
@@ -220,15 +210,15 @@ public class EscPosModule extends ReactContextBaseJavaModule {
         }
     }
 
-    @ReactMethod
-    public void printImageWithOffset(String filePath, int widthOffet, Promise promise) {
-        try {
-            printerService.printImage(filePath, widthOffet);
-            promise.resolve(true);
-        } catch (IOException e) {
-            promise.reject(e);
-        }
-    }
+    // @ReactMethod
+    // public void printImageWithOffset(String filePath, int widthOffet, Promise promise) {
+    //     try {
+    //         printerService.printImage(filePath, widthOffet);
+    //         promise.resolve(true);
+    //     } catch (IOException e) {
+    //         promise.reject(e);
+    //     }
+    // }
 
     @ReactMethod
     public void printQRCode(String address, String value, int size, Promise promise) {
