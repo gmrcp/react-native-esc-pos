@@ -3,10 +3,9 @@
   "description": "A React Native ESC/POS module to help you connect to your ESC/POS printer easily.",
   "version": "0.9.0",
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gmrcp/react-native-esc-pos.git",
-    "baseUrl": "https://github.com/gmrcp/react-native-esc-pos"
+    "url": "git@github.com:gmrcp/react-native-esc-pos.git"
   },
+  "keywords": ["package"],
   "license": "MIT",
   "author": {
     "name": "gmrcp",
@@ -21,7 +20,10 @@
     "react-native": "^0.64.3"
   },
   "peerDependencies": {
-    "react": "^16.5.0",
+    "react": "^17.0.0",
     "react-native": ">=0.57.0-rc.0 <1.0.x"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
